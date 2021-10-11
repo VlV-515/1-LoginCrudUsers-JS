@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin CRUD</title>
+    <link rel="shortcut icon" href="images/icon_admin.ico" type="image/x-icon">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP -->
+    <!-- ALERTIFY JS -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <!-- ALERTIFY JS -->
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- JQuery -->
+    <!-- CUSTOM -->
+    <style>
+        body {
+            background-color: #f7f6f6;
+        }
+
+        table thead {
+            background-color: #0a4f70;
+            color: white;
+        }
+    </style>
+    <!-- CUSTOM -->
+    <!-- Main -->
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header"></div>
+    <!-- Body -->
+    <div class="container text-center mt-5">
+        <h1>User management system (CRUD).</h1>
+    </div>
+    <!-- CONTAINER -->
+    <div class="container my-5 p-3 bg-body shadow-lg  rounded">
+        <button id="btnNewUser" type="button" class="btn btn-primary" data-bs-toggle="modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                <path fill-rule="evenodd"
+                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+            </svg>
+            New User
+        </button>
+        <table id="tableUsers" class="table mt-2 table-bordered table-striped text-center">
+            <thead>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Role</th>
+                <th>Create Date</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <!-- JS AREA -->
+            </tbody>
+        </table>
+    </div>
+    <!-- CONTAINER -->
+    <!-- MODAL -->
+    <div class="modal" id="modalUser" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header  bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="formEmail" class="col-form-label">Username / email:</label>
+                            <input id="formEmail" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formPassword" class="col-form-label">Password:</label>
+                            <input id="formPassword" type="password" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formRole" class="col-form-label">Role:</label>
+                            <select id="formRole" class="form-control">
+                                <option disabled selected value="0">Select a role</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-square" viewBox="0 0 16 16">
+                            <path d="M3 14.5A1.5 1.5 0 0 1 1.5 13V3A1.5 1.5 0 0 1 3 1.5h8a.5.5 0 0 1 0 1H3a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V8a.5.5 0 0 1 1 0v5a1.5 1.5 0 0 1-1.5 1.5H3z"/>
+                            <path d="m8.354 10.354 7-7a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
+                          </svg>
+                        Save</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                          </svg>
+                        Cancel</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL -->
+    <script src="js/users.js"></script>
+</body>
+
+</html>
