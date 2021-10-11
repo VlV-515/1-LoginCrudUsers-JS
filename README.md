@@ -1,6 +1,6 @@
 # Login - CRUD
 
-_Pequeña aplicacion que consta de un login con autenticacion JWT, con doble vista, la vista del 'admin' que le permite controlar todo un CRUD de usuarios, y la vista de 'user' que puede ser personalizable 100%._
+_Pequeña aplicacion desarrollada en javascript que consta de un login con autenticacion JWT, con doble vista, la vista del 'admin' que le permite controlar todo un CRUD de usuarios, y la vista de 'user' que puede ser personalizable 100%._
 
 ## Comenzando 🚀
 
@@ -11,7 +11,7 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 _Necesitaremos de una api para este proyecto, la cual podras encontrar en el siguiente enlace._
 
 ```
-https://enlace.com
+https://github.com/VlV-515/1-LoginCrudUsers-API
 ```
 
 _Te recomiendo como editor de códigos Visual Studio Code_
@@ -32,7 +32,7 @@ _Ruta de archivo:_
 js -> main.js
 ```
 
-_Y listo._
+_Y listo, ah quedado lista._
 
 ## Recursos utilizados 🛠️
 
