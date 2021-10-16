@@ -2,6 +2,14 @@
 
 _Pequeña aplicacion desarrollada en javascript que consta de un login con autenticacion JWT, con doble vista, la vista del 'admin' que le permite controlar todo un CRUD de usuarios, y la vista de 'user' que puede ser personalizable 100%._
 
+### Otras soluciones
+
+_Resolucion de este ejercicio en framework Angular:_
+
+```
+https://github.com/VlV-515/1-LoginCrudUsers-Angular
+```
+
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
